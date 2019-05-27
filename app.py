@@ -9,12 +9,13 @@
 
 # import lines
 from flask import Flask
+from flask import render_template
 
 app = Flask(__name__)
 
 @app.route('/')
 def index():
-	return 'Hello, Flask!'
+	return render_template('home.html')
 
 # Alternative way to run via python3.
 if __name__ == '__main__':
