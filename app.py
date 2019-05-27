@@ -12,11 +12,16 @@ from flask import Flask
 from flask import render_template
 import datetime
 
+# data import
+from data import TestMonster
+
 app = Flask(__name__)
+
+Test = TestMonster()
 
 @app.route('/')
 def index():
-	return render_template('home.html')
+	return render_template('home.html', monsters = Test)
 
 '''
 Context Processor 'Injection of items'
