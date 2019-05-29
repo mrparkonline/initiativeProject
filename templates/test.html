@@ -1,0 +1,29 @@
+{% extends 'layout.html' %}
+{% block title %}Test{% endblock %}
+
+{% block body %}
+	<div class='row'>
+		<div class='col-sm-12'>
+			<h4>Initiative Tracker:</h4>
+			<form action='http://localhost:5000/test' method='POST'>
+				<button type='submit' name='player_btn' value='player_submit' class='btn btn-outline-success'>Add Player</button>
+				<button type='submit' class='btn btn-outline-danger'>Add Monster</button>
+				<button type='submit' class='btn btn-outline-primary'>Sort Table</button>
+			</form>
+		</div>
+	</div>
+	<br/>
+	<div class='row'>
+		<div class='col-sm-12'>
+		<ul class='list-group'>
+			{% if rows or rows != None %}
+				{% for row in rows %}
+					{% for key, value in row.items() %}
+						{{value | safe}}
+					{% endfor %}
+				{% endfor %}
+			{% endif %}
+		</ul>
+		</div>
+	</div>
+{% endblock %}

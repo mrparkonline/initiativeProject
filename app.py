@@ -10,18 +10,31 @@
 # import lines
 from flask import Flask
 from flask import render_template
+from flask import request
 import datetime
 
 # data import
 from data import TestMonster
+from rows import Rows
+from rows import addRow
 
 app = Flask(__name__)
 
 Test = TestMonster()
+Rows = Rows()
 
 @app.route('/')
 def index():
 	return render_template('home.html', monsters = Test)
+
+@app.route('/test', methods=['POST', 'GET'])
+def test():
+	if request.method == 'POST':
+		result = request.form
+		Rows.append(addRow(result))
+		return render_template('test.html', rows=Rows, result=None)
+
+	return render_template('test.html', rows=None, result=None)
 
 '''
 Context Processor 'Injection of items'
