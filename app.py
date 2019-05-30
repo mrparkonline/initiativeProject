@@ -32,6 +32,12 @@ def test():
 	if request.method == 'POST':
 		result = request.form
 		Rows.append(addRow(result))
+		# some ways to improve this:
+		'''
+		use of redirect and creating a class for our rows and database.
+		implement mongodb pymongo
+		'''
+
 		return render_template('test.html', rows=Rows, result=None)
 
 	return render_template('test.html', rows=None, result=None)
