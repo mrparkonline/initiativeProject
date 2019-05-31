@@ -9,7 +9,7 @@ To give a basic purpose to this application, it will act as an initiative tracke
 * [Flask](http://flask.pocoo.org/)
 * [Pymongo](https://api.mongodb.com/python/current/)
 * [MongoDB](https://www.mongodb.com/)
-* [SQLite3] (https://www.sqlite.org/)
+* [SQLite3](https://www.sqlite.org/)
 
 ## To Do List
 
